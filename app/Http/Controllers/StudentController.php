@@ -12,4 +12,13 @@ class StudentController extends Controller
             'students' => $students,
         ]);
     }
+
+    public function create(): \Inertia\Response
+    {
+        $classes = \App\Http\Resources\ClassesResource::collection(\App\Models\Classes::all());
+
+        return inertia('Students/Create', [
+            'classes' => $classes,
+        ]);
+    }
 }

@@ -22,12 +22,14 @@ const updatePageNumber = (link) => {
 <template>
     <div class="max-w-7xl mx-auto py-6">
         <div class="max-w-none mx-auto">
-            <div class="bg-white overflow-hidden shadow sm:rounded-lg">
-                <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+            <div class="bg-white dark:bg-gray-800 dark:text-white overflow-hidden shadow sm:rounded-lg">
+                <div
+                    class="bg-white dark:bg-gray-800 dark:text-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
                     <div class="flex-1 flex justify-between sm:hidden" />
-                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                    <div
+                        class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between dark:bg-gray-800 dark:text-white">
                         <div>
-                            <p class="text-sm text-gray-700">
+                            <p class="text-sm text-gray-700 dark:text-white">
                                 Showing
                                 <!-- space -->
                                 <span class="font-medium">{{ data.meta.from }}</span>
@@ -48,10 +50,10 @@ const updatePageNumber = (link) => {
                                 aria-label="Pagination">
                                 <button v-for="(link, index) in data.meta.links" :key="index"
                                     :disabled="!link.url || link.active" @click="updatePageNumber(link)"
-                                    class="relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                    class="relative inline-flex items-center px-4 py-2 border text-sm font-medium dark:bg-gray-800 dark:text-white"
                                     :class="{
                                         'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': link.active,
-                                        'bg-white border-gray-300 text-gray-500 hover:bg-gray-50': !link.active,
+                                        'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-500': !link.active,
                                     }">
                                     <span v-html="link.label"></span>
                                 </button>
