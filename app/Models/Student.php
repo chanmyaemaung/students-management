@@ -19,6 +19,8 @@ class Student extends Model
         'phone_number',
     ];
 
+    protected $with = ['class', 'section'];
+
     public function class(): BelongsTo
     {
         return $this->belongsTo(\App\Models\Classes::class, 'class_id');
